@@ -1,20 +1,18 @@
-const mongoose=require('mongoose')
-const { type } = require('node:os')
-// const { type } = require('node:os')
+const mongoose=require("mongoose")
 const studentSchema=new mongoose.createSchema({
-    name:{
+    Name:{
         type:String,
         require:true
     },
-    class:{
+    Class:{
         type:String,
         require:true
     },
-    rollNo:{
+    RollNo:{
         type:Number,
         require:true
     },
-    section:{
+    Section:{
         type:String,
         require:true
     }
@@ -22,4 +20,5 @@ const studentSchema=new mongoose.createSchema({
     
 })
 const studentModel=mongoose.model("student",studentSchema)
-module.exports=studentModel; 
+
+module.exports = studentModel

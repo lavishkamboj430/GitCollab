@@ -1,3 +1,4 @@
+const studentModel = require("../modals/studentSchemas")
 const UserInfo = async (req, res) => {
     const Data = req.body
 
@@ -8,6 +9,22 @@ const UserInfo = async (req, res) => {
             }
         )
     }
+
+    try {
+        await studentModel.insertOne({
+            Name: Data.Name,
+            Class: Data.Class,
+            RollNo: Data.RollNo,
+            Section: Data.Section
+        })
+    } catch (error) {
+        return res.status(400).json(
+            {
+                Message: "Enter Valid Information"
+            }
+        )
+    }
+
 
 
     return res.status(200).json(
