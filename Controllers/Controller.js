@@ -11,7 +11,7 @@ const UserInfo = async (req, res) => {
     }
 
     try {
-        await studentModel.insertOne({
+        await studentModel.create({
             Name: Data.Name,
             Class: Data.Class,
             RollNo: Data.RollNo,
