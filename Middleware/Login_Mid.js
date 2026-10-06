@@ -1,6 +1,6 @@
 const Joi = require("joi")
 
-const Reg_Mid = (req, res, next) => {
+const Login_Mid = (req, res, next) => {
     const Schema = Joi.object(
         {
             UserName: Joi.string().min(4).max(25).required(),
@@ -11,7 +11,7 @@ const Reg_Mid = (req, res, next) => {
     const { error } = Schema.validate(req.body)
 
     if (error) {
-        return res.status(400).json({
+        return res.status(400).json( {
             Success: false,
             Message: error.details[0].message
         })
@@ -21,4 +21,4 @@ const Reg_Mid = (req, res, next) => {
 
 }
 
-module.exports = Reg_Mid
+module.exports = Login_Mid
